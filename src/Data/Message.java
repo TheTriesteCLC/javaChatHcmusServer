@@ -1,9 +1,10 @@
 package Data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Message {
+public class Message implements Serializable {
     private String sender;
     private String content;
     private String chatroom;

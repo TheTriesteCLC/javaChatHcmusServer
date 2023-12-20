@@ -1,12 +1,17 @@
 package Data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Client {
+public class Client implements Serializable {
     private String username;
     private ArrayList<String> chatRooms;
+    public Client(String username) {
+        this.username = username;
+        this.chatRooms = new ArrayList<>();
+    }
     public Client(String username, ArrayList<String> chatRooms) {
         this.username = username;
         this.chatRooms = chatRooms;

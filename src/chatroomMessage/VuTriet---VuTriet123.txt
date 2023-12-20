@@ -1,0 +1,6 @@
+VuTriet: Hello VuTriet123
+VuTriet: Hello ong
+VuTriet123: Ong khoe khong?
+VuTriet: toi khoe 
+VuTriet: tui gui file cho ong nha
+VuTriet: config.txt

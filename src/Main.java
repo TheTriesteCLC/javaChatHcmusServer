@@ -1,10 +1,6 @@
-import Data.ChatRoom;
-import Data.Client;
-import Data.database;
+import Data.*;
 
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -29,25 +25,39 @@ public class Main {
 //            String value = allChatrooms.get(chatroom).toString();
 //            System.out.println(key + " " + value);
 //        }
-        ArrayList<String> allUser = new ArrayList<>();
-        for(String user : allClients.keySet()) {
-            allUser.add(user);
-        }
+//        ArrayList<String> allUser = new ArrayList<>();
+//        for(String user : allClients.keySet()) {
+//            allUser.add(user);
+//        }
 
-        ServerSocket serverSocket = new ServerSocket(8080);
-        do {
-            try {
-                Socket ss=serverSocket.accept();
+//        ServerSocket serverSocket = new ServerSocket(8080);
+//        do {
+//            try {
+//                Socket ss = serverSocket.accept(); //asynchronous
+//
+//                OutputStream os = ss.getOutputStream();
+//                ObjectOutputStream oos = new ObjectOutputStream(os);
+//                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
+//
+//                InputStream is = ss.getInputStream();
+//                ObjectInputStream ois = new ObjectInputStream(is);
+//                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+//
+//                oos.writeObject(allUser);
+//
+//                String request = br.readLine();
+//
+//            } catch (UnknownHostException e) {
+//                throw new RuntimeException(e);
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }while(true);
+//        Server serverSocket = new Server(8080,db);
 
-                OutputStream os = ss.getOutputStream();
-                ObjectOutputStream oos = new ObjectOutputStream(os);
-
-                oos.writeObject(allUser);
-            } catch (UnknownHostException e) {
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }while(true);
+        NewServer newServer1 = new NewServer(db,8080);
+        newServer1.start();
     }
 }
+
+

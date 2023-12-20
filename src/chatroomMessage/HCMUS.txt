@@ -1,0 +1,4 @@
+VuTriet: hello mn
+VuTriet123: hello ong
+VuTriet123: lai gap nhau nua r
+VuTriet: config.txt

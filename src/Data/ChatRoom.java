@@ -2,12 +2,13 @@ package Data;
 
 import Data.Message;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ChatRoom {
+public class ChatRoom implements Serializable {
     private String roomName;
     private String type;
     private ArrayList<Message> messages;
@@ -28,6 +29,7 @@ public class ChatRoom {
     public void addMessage(Message newMess) {
         this.messages.add(newMess);
     }
+    public void deleteMessage(int index) {this.messages.remove(index);}
 
     public String getRoomName() {
         return roomName;
